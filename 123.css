@@ -1,0 +1,101 @@
+/* Reset Styles */
+body, h2, a, button {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradien biru */
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    position: fixed;
+    top: 10px;  /* Jarak dari atas */
+    right: 10px; /* Jarak dari kanan */
+    left: 10px; /* Jarak dari kiri */
+    display: flex;
+    justify-content: space-between; /* Memisahkan menu dan tombol login */
+    align-items: center;
+    padding: 8px 16px; /* Memperkecil padding untuk tampilan lebih elegan */
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px; /* Mengurangi border-radius agar lebih ramping */
+    z-index: 1000;
+  }
+  
+  /* Menu Navbar */
+  .navbar-menu {
+    display: flex;
+    justify-content: center; /* Memusatkan menu */
+    list-style-type: none;
+    flex-grow: 1; /* Membuat navbar menu mengisi ruang */
+  }
+  
+  .navbar-menu li {
+    margin: 0 15px; /* Mengurangi jarak antar menu untuk tampilan lebih kompak */
+  }
+  
+  .navbar-menu a {
+    color: white;
+    font-size: 16px; /* Memperkecil ukuran font */
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-menu a:hover {
+    color: #ffcc00; /* Warna saat hover */
+  }
+  
+  /* Login Button */
+  .login-button {
+    font-size: 14px; /* Memperkecil ukuran font */
+    color: white;
+    background: #007aff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Welcome Text */
+  .h2-content {
+    font-size: 26px; /* Memperkecil ukuran font */
+    font-weight: bold;
+    margin-top: 100px; /* Memberi jarak lebih besar antara navbar dan kalimat */
+    margin-bottom: 20px; /* Memberikan sedikit jarak antara judul dan gambar */
+  }
+  
+  /* Image */
+  .img-con {
+    margin-top: 20px;
+  }
+  
+  .img-content {
+    max-width: 40%; /* Perkecil ukuran gambar menjadi 70% dari lebar kontainer */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .ig-content {
+    max-width: 10%; /* Perkecil ukuran gambar menjadi 70% dari lebar kontainer */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }

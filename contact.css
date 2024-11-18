@@ -1,0 +1,46 @@
+*,
+html{
+    margin: 0;
+    padding: 0;
+}
+
+.container-navbar {
+    background-color: black;
+    width: 100%;
+    height: 100px;
+}
+
+.ul-navbar {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.li-navbar {
+    color: aliceblue;
+    list-style-type: none;
+    padding: 10px;
+    margin: 5px;
+}
+
+.h2-content {
+    height: 100px;
+    color: black;
+}
+
+.img-content {
+    height: 20%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.a-content {
+    width: 720px;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
