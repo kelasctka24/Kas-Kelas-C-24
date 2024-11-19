@@ -6,7 +6,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const errorMessage = document.getElementById('error-message');
   
     if (username === 'TKA-1C' && password === 'cclasstka') {
-      window.location.href = 'payment.html';
+      window.location.href = 'pilihan.html';
     } else {
       errorMessage.textContent = 'Invalid username or password!';
     }
