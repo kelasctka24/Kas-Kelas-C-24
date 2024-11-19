@@ -1,2 +1,3 @@
-Tanggal,Pemasukan,Pengeluaran,Keperluan,Catatan
-11-19-2024,50.000,0,kas,tes
+Tanggal,Keterangan,Pemasukan,Pengeluaran
+2024-01-01,Pembayaran Kas,100000,0
+2024-01-08,Pengeluaran Buku,0,50000
