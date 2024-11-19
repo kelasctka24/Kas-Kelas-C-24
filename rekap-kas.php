@@ -1,9 +1,14 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+require 'vendor/autoload.php'; // Tambahkan ini jika menggunakan PHPSpreadsheet
+// Lanjutkan dengan kode Anda
+
 require 'vendor/autoload.php'; // Pastikan autoloader composer digunakan
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-$filePath = 'rekap-kas.xlsx'; // Path ke file Excel
+$filePath = 'Catatan-Kas.xlsx'; // Path ke file Excel
 
 if (file_exists($filePath)) {
     // Membaca file Excel

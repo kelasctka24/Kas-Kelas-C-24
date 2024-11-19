@@ -7,6 +7,37 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Rekap Kas Kelas</h1>
+    <p>Berikut adalah data pemasukan dan pengeluaran kas kelas:</p>
+    <div id="rekap-table"></div>
+
+    <script>
+        // Fungsi untuk membaca file CSV dan menampilkan data dalam tabel
+        async function loadCSV() {
+            const response = await fetch('rekap.csv'); // Pastikan nama file sesuai
+            const data = await response.text();
+
+            const rows = data.split('\n').map(row => row.split(','));
+
+            // Buat tabel
+            let table = '<table>';
+            rows.forEach((row, index) => {
+                table += '<tr>';
+                row.forEach(cell => {
+                    table += index === 0 
+                        ? <th>${cell}</th> // Header row
+                        : <td>${cell}</td>; // Data row
+                });
+                table += '</tr>';
+            });
+            table += '</table>';
+
+            document.getElementById('rekap-table').innerHTML = table;
+        }
+
+        // Panggil fungsi untuk memuat CSV
+        loadCSV();
+    </script>
   <div class="center-container">
     <div class="content">
       <h1>Rekap Kas Kelas</h1>
