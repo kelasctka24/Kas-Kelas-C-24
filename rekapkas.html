@@ -7,13 +7,34 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="center-container">
-    <div class="content">
-      <h1>Rekap Kas Kelas</h1>
-      <p>Silakan klik file berikut :</p>
-      <button onclick="window.location.href='rekap-kas.php'">Rekap Kas</button>
-      <button onclick="window.location.href='pilihan.html'">Kembali</button>
-    </div>
+        <h1>Rekap Kas Kelas</h1>
+        <div id="rekap-container"></div>
+    
+        <script>
+            async function loadRekap() {
+                const csvUrl = 'https://raw.githubusercontent.com/fdhl1135/Pembayaran-Kas-TKA-1C/main/Catatan-Kas.csv'; // Ganti dengan URL CSV Anda
+                const response = await fetch(csvUrl);
+                const data = await response.text();
+    
+                const rows = data.split('\n').map(row => row.split(','));
+    
+                let table = '<table>';
+                rows.forEach((row, index) => {
+                    table += '<tr>';
+                    row.forEach(cell => {
+                        table += index === 0 
+                            ? <th>${cell}</th> // Header
+                            : <td>${cell}</td>; // Data
+                    });
+                    table += '</tr>';
+                });
+                table += '</table>';
+    
+                document.getElementById('rekap-container').innerHTML = table;
+            }
+            loadRekap();
+        </script>
+        <button onclick="window.location.href='pilihan.html'">Kembali</button>
   </div>
 </body>
 </html>

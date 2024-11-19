@@ -9,5 +9,5 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
       window.location.href = 'pilihan.html';
     } else {
       errorMessage.textContent = 'Invalid username or password!';
-    }
+    }
   });
