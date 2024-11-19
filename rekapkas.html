@@ -8,25 +8,21 @@
 </head>
 <body>
     <h1>Rekap Kas Kelas</h1>
-    <div id="rekap-container">Memuat data...</div>
-
+    <div id="rekap-container"></div>
     <script>
+        // Masukkan kode JavaScript di sini
         async function loadRekap() {
-            const csvUrl = 'https://github.com/fdhl1135/Pembayaran-Kas-TKA-1C/blob/main/rekap_kas.csv'; // Ganti dengan URL CSV Anda
+            const csvUrl = 'https://github.com/fdhl1135/Pembayaran-Kas-TKA-1C/blob/main/rekap_kas.csv';
             try {
                 const response = await fetch(csvUrl);
                 if (!response.ok) throw new Error('Gagal memuat file CSV.');
-
                 const data = await response.text();
                 const rows = data.split('\n').map(row => row.split(','));
-
                 let table = '<table>';
                 rows.forEach((row, index) => {
                     table += '<tr>';
                     row.forEach(cell => {
-                        table += index === 0 
-                            ? <th>${cell}</th> // Header
-                            : <td>${cell}</td>; // Data
+                        table += index === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
                     });
                     table += '</tr>';
                 });
@@ -37,7 +33,6 @@
                 document.getElementById('rekap-container').innerHTML = '<p>Gagal memuat data rekap kas.</p>';
             }
         }
-
         loadRekap();
     </script>
      <button onclick="window.location.href='pilihan.html'">Kembali</button>
