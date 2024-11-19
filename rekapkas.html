@@ -6,13 +6,32 @@
     <title>Rekap Kas Kelas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+    }
+</style>
 <body>
     <h1>Rekap Kas Kelas</h1>
     <div id="rekap-container"></div>
+    <p>Memuat data rekap kas...</p>
+    </div>
+    
     <script>
         // Masukkan kode JavaScript di sini
         async function loadRekap() {
-            const csvUrl = 'https://cors-anywhere.herokuapp.com/https://github.com/fdhl1135/Pembayaran-Kas-TKA-1C/blob/main/rekap_kas.csv';
+            const csvUrl = 'https://cors-anywhere.herokuapp.com/https://github.com/fdhl1135/Pembayaran-Kas-TKA-1C/main/rekap_kas.csv';
             try {
                 const response = await fetch(csvUrl);
                 if (!response.ok) throw new Error('Gagal memuat file CSV.');
