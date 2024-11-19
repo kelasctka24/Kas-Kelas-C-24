@@ -1,25 +1,20 @@
 async function loadRekap() {
-    const csvUrl = 'https://drive.google.com/file/d/12t5cEdGDy8w64cZUp-LCk3xsE6AJW4tY/view?usp=drivesdk'; 
- // Ganti dengan URL Raw yang benar
+    const url = 'https://cors-anywhere.herokuapp.com/https://github.com/fdhl1135/Pembayaran-Kas-TKA-1C/blob/main/rekap_kas.csv';
     try {
-        console.log('Memuat file CSV dari:', csvUrl); // Debug
-        const response = await fetch(csvUrl);
-
+        const response = await fetch(url);
         if (!response.ok) {
-            throw new Error('Status tidak OK: ' + response.status); // Debug status
+            throw new Error(`HTTP Error! Status: ${response.status}`);
         }
-
-        const data = await response.text();
-        console.log('Data CSV berhasil dimuat:', data); // Debug isi data
-
-        const rows = data.split('\n').map(row => row.split(','));
+        const data = await response.json();
         let table = '<table>';
-        rows.forEach((row, index) => {
-            table += '<tr>';
-            row.forEach(cell => {
-                table += index === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
-            });
-            table += '</tr>';
+        table += '<tr><th>Tanggal</th><th>Keterangan</th><th>Pemasukan</th><th>Pengeluaran</th></tr>';
+        data.forEach(item => {
+            table += `<tr>
+                <td>${item.Tanggal}</td>
+                <td>${item.Keterangan}</td>
+                <td>${item.Pemasukan}</td>
+                <td>${item.Pengeluaran}</td>
+            </tr>`;
         });
         table += '</table>';
         document.getElementById('rekap-container').innerHTML = table;
