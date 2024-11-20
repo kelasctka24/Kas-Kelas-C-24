@@ -23,37 +23,11 @@
     }
 </style>
 <body>
-    <h1>Rekap Kas Kelas</h1>
-    <div id="rekap-container"></div>
-    <p>Memuat data rekap kas...</p>
+    <div class="menu-container">
+        <h1>Rekap Kas Kelas</h1>
+        <button onclick="window.location.href='https://docs.google.com/spreadsheets/d/11dsgJH4GA4VqWP9RSdojOyqAWKyHVrZH/edit?usp=sharing&ouid=101717341367153624407&rtpof=true&sd=true'">Rekap Pengeluaran/Pemasukan</button>
+        <button onclick="window.location.href='https://docs.google.com/spreadsheets/d/1-jM37M6V6a-VwNuWghGr_-I9SieODfWMTmJJp17HhSw/edit?resourcekey=&gid=2147105189#gid=2147105189'">Rekap Pembayaran</button>
+        <button onclick="window.location.href='pilihan.html'">Kembali</button>
     </div>
-    
-    <script>
-        // Masukkan kode JavaScript di sini
-        async function loadRekap() {
-            const csvUrl = 'https://drive.google.com/uc?id=12tMNxpSf_wVXPb7TZeuq-XdOHfpeSUxp&export=download';
-            try {
-                const response = await fetch(csvUrl);
-                if (!response.ok) throw new Error('Gagal memuat file CSV.');
-                const data = await response.text();
-                const rows = data.split('\n').map(row => row.split(','));
-                let table = '<table>';
-                rows.forEach((row, index) => {
-                    table += '<tr>';
-                    row.forEach(cell => {
-                        table += index === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
-                    });
-                    table += '</tr>';
-                });
-                table += '</table>';
-                document.getElementById('rekap-container').innerHTML = table;
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('rekap-container').innerHTML = '<p>Gagal memuat data rekap kas.</p>';
-            }
-        }
-        loadRekap();
-    </script>
-     <button onclick="window.location.href='pilihan.html'">Kembali</button>
 </body>
 </html>
